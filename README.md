@@ -16,34 +16,34 @@ In craps, the probability of winning depends on two stages:
 We calculate the probability of winning:
 
 **Instant win probability:**
-$$ P_{win} = P(7) + P(11) = \frac{6}{36} + \frac{2}{36} = \frac{8}{36} $$
+$$P_{win} = P(7) + P(11) = \frac{6}{36} + \frac{2}{36} = \frac{8}{36}$$
 
 **Instant loss probability:**
-$$ P_{loss} = P(2) + P(3) + P(12) = \frac{1}{36} + \frac{2}{36} + \frac{1}{36} = \frac{4}{36} $$
+$$P_{loss} = P(2) + P(3) + P(12) = \frac{1}{36} + \frac{2}{36} + \frac{1}{36} = \frac{4}{36}$$
 
-The remaining outcomes establish a **point**. Let \( x \) be the probability of rolling a given point before rolling a 7.
+The remaining outcomes establish a **point**. Let $\( x \)$ be the probability of rolling a given point before rolling a 7.
 
 For any point \( k \), we model the recurrence equation:
-$$ P_k = \frac{k-1}{36} \cdot \frac{1}{1 - \frac{6}{36}} $$
+$$P_k = \frac{k-1}{36} \cdot \frac{1}{1 - \frac{6}{36}}$$
 where \( k-1 \) represents the number of successful rolls for a given point.
 
 The total probability of winning the game is:
-$$ P_{total} = P_{win} + \sum_{k=4}^{10} P_k \cdot P(point=k) $$
+$$P_{total} = P_{win} + \sum_{k=4}^{10} P_k \cdot P(point=k)$$
 
 #### **1.2 Expected Value Analysis**
 We analyze the **expected value (EV)** per bet, which is calculated as:
-$$ EV = P_{win} \cdot (+1) + P_{loss} \cdot (-1) $$
+$$EV = P_{win} \cdot (+1) + P_{loss} \cdot (-1)$$
 where each win earns +1 unit and each loss loses -1 unit.
 
 After numerical evaluation, the expected value is found to be slightly negative:
-$$ EV \approx -0.014 $$
+$$EV \approx -0.014$$
 indicating that craps is a **negative expected value game** for the player.
 
 #### **1.3 Betting Strategy Evaluation**
 We compare strategies such as **Martingale** (doubling after losses) and **Anti-Martingale** (increasing after wins). The bankroll fluctuation follows a geometric progression, modeled as:
-$$ B_n = B_0 \cdot (2^n) $$
+$$B_n = B_0 \cdot (2^n)$$
 for Martingale, and:
-$$ B_n = B_0 \cdot (\frac{1}{2})^n $$
+$$B_n = B_0 \cdot (\frac{1}{2})^n$$
 for Anti-Martingale, with win probabilities modifying the recurrence relations.
 
 ## 2. Folder Structure
